@@ -1,0 +1,336 @@
+
+// Fonts
+// @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+// @import url(https://fonts.googleapis.com/css?family=Great+Vibes);
+@import url(https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+html {
+  background-color: #FFFCF2;
+  height: 100%;
+}
+
+body {
+  background-color: #FFFCF2;
+  height: 100%;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 11px;
+  margin-bottom: 11px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 11px;
+}
+
+li {
+  font-size: 14px;
+  line-height: 1.6;
+}
+// a {
+//   text-decoration: none;
+//   color: #3A405A;
+// }
+// a:hover { /* For when your mouse hovers over the element */
+//   text-decoration: underline;
+// }
+
+#app {
+  background-color: #FFFCF2;
+  background-image: url('/images/F7.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 40%;
+  height: 100%;
+}
+
+// #3F88C5  dark grey
+// #266DD3  light blue
+// #1F2A78  dark blue
+// #888098  light grey
+// #FFFCF2  off white
+
+#app > [data-reactroot] {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 3%;
+  margin-right: 3%;
+  font-family: 'Roboto', sans-serif;
+  color: #3A405A;
+  // text-align: center;
+}
+
+.appnav {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+}
+
+.title {
+  flex: 1 1 auto;
+  // font-family: 'Great Vibes', cursive;
+  font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+.navlinks {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  // flex: 1 1 auto;
+  // justify-content: space-around;
+  justify-content: flex-end;
+  margin-right: -2%;
+}
+
+.home-container {
+  background-color: #FFFCF2;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  transition: opacity .2s ease-in;
+}
+
+.home-content-container-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1 1 auto;
+}
+
+.home-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.home-text-container {
+  margin-left: 3%;
+}
+
+.home-skill-container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.skill-sentence {
+  margin: 0px 3px 0px;
+}
+
+.skill-text {
+  margin: 0px 3px;
+}
+
+.skill {
+  // margin-left: 1%;
+  transition: transform .2s ease-in;
+  // color: #1F2A78;
+}
+
+.next {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: row;
+}
+
+.next-arrow {
+  align-self: center;
+}
+
+.projects-container {
+  background-color: #FFFCF2;
+  display: flex;
+  flex-direction: column;
+  transition: opacity .2s ease-in;
+  position: absolute;
+  top: 50px;
+  width: 94%;
+  min-height: calc(100% - 50px);
+}
+
+.projects-text-container {
+  flex: 1 1 auto;
+}
+
+.projects-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.project-container {
+  width: 30%;
+}
+
+.project-paper {
+  height: 95%;
+}
+
+.project-contents {
+  margin: 5%;
+  padding: 1% 0% 1% 0%;
+}
+
+.project-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.project-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.project-link {
+  margin-left: 5px;
+}
+
+.contact-container {
+  background-color: #FFFCF2;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  transition: opacity .2s ease-in;
+}
+
+.contact-description {
+  margin: 0;
+}
+
+.contact-list {
+  margin: 0 0 11px;
+}
+
+.field-label {
+  margin: 0;
+}
+
+
+/* Phones - Landscape */
+@media only screen and (max-width : 736px) and (orientation: landscape) {
+  // .home-content-container {
+  //   align-items: center;
+  //   text-align: center;
+  // }
+
+  // .home-skill-container {
+  //   flex-direction: column;
+  // }
+
+  // .skill {
+  //   width: 100%;
+  //   margin-left: 0%;
+  // }
+
+  .projects-text-container {
+    text-align: center;
+  }
+
+  .projects-list-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .project-container {
+    width: 85%;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .form-large {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* Phones - Portrait */
+@media only screen and (max-width : 570px) and (orientation: portrait) {
+  .home-content-container {
+    flex-direction: column;
+    align-items: center;
+    // text-align: center;
+  }
+
+  // .home-text-container {
+  //   margin-left: auto;
+  // }
+
+  // .home-skill-container {
+  //   flex-direction: column;
+  // }
+
+  // .skill {
+  //   width: 100%;
+  //   margin-left: 0%;
+  // }
+
+  .projects-text-container {
+    text-align: center;
+  }
+
+  .projects-list-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .project-container {
+    width: 85%;
+  }
+
+  .contact-container {
+    align-items: center;
+    margin: 0 5% 0 5%;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
