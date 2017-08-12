@@ -31,9 +31,11 @@ class Home extends Component {
     clearTimeout(this.timeout);
   }
 
-  handleClick() {
-    this.setState({opacity: 0, pointerEvents: 'none'});
-    setTimeout(() => this.props.history.push('/projects'), 300);
+  handleClick(e, key) {
+    if (!key || (key && e.key === 'Enter')) {
+      this.setState({opacity: 0, pointerEvents: 'none'});
+      setTimeout(() => this.props.history.push('/projects'), 300);
+    }
   }
 
   render() {
@@ -56,7 +58,7 @@ class Home extends Component {
         <div className='home-content-container-wrapper'>
           <div className='home-content-container'>
             <div className='home-img-container'>
-              <img style={{width: '90%', height: 'auto'}} src={'/images/picmed.jpg'}/>
+              <img className='home-img' src={'/images/pic2.jpg'}/>
             </div>
             <div className='home-text-container'>
               <h2> Who am I? </h2>
@@ -75,7 +77,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className='next' onClick={this.handleClick}>
+        <div className='next' onClick={(e) => this.handleClick(e)} onKeyPress={(e) => this.handleClick(e, true)} onMouseDown={(e) => e.preventDefault()} tabIndex='0'>
           <h4>KNOW MY WORK</h4>
           <div className='next-arrow'><ChevronRight/></div>
         </div>

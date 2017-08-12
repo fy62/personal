@@ -15,6 +15,6 @@
 //     return view('welcome');
 // });
 
-Route::get('/{type?}/{step?}', function () {
+Route::get('/{any?}/{thing?}', function () {
     return view('index');
 });

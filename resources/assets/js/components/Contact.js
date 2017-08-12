@@ -43,7 +43,7 @@ class Home extends Component {
     return (
       <div className='contact-container main' style={{opacity: this.state.opacity, pointerEvents: this.state.pointerEvents}}>
         <h3> Contact </h3>
-        <h4 className='contact-description'> I am available for full-time opportunities. Contact me for: Full stack development and Freelance opportunities</h4>
+        <h4 className='contact-description'> I am available for full-time opportunities. Contact me for: Full stack development and Freelance opportunities.</h4>
         <form className='form form-large' onSubmit={this.handleSubmit}>
           <div className='form'>
             <div>

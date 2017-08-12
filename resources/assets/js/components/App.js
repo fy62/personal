@@ -49,6 +49,9 @@ class App extends Component {
             onRequestChange={this.handleRequestChange}
             onTouchTap={this.handleTouchTap}
             open={this.state.open}
+            tabIndex='0'
+            onKeyPress={(e) => {if (e.key === 'Enter') this.handleRequestChange(true, 'enter');}}
+            onMouseDown={(e) => e.preventDefault()}
           >
             <MenuItem primaryText='Know Me' onTouchTap={()=> this.handleClick('/')}/>
             <MenuItem primaryText='Know My Work' onTouchTap={()=> this.handleClick('/projects')}/>

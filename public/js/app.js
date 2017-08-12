@@ -19150,7 +19150,14 @@ var App = function (_Component) {
               targetOrigin: { horizontal: 'right', vertical: 'bottom' },
               onRequestChange: this.handleRequestChange,
               onTouchTap: this.handleTouchTap,
-              open: this.state.open
+              open: this.state.open,
+              tabIndex: '0',
+              onKeyPress: function onKeyPress(e) {
+                if (e.key === 'Enter') _this3.handleRequestChange(true, 'enter');
+              },
+              onMouseDown: function onMouseDown(e) {
+                return e.preventDefault();
+              }
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_material_ui_MenuItem___default.a, { primaryText: 'Know Me', onTouchTap: function onTouchTap() {
                 return _this3.handleClick('/');
@@ -19276,7 +19283,7 @@ var Home = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'h4',
           { className: 'contact-description' },
-          ' I am available for full-time opportunities. Contact me for: Full stack development and Freelance opportunities'
+          ' I am available for full-time opportunities. Contact me for: Full stack development and Freelance opportunities.'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'form',
@@ -19404,17 +19411,21 @@ var Home = function (_Component) {
     }
   }, {
     key: 'handleClick',
-    value: function handleClick() {
+    value: function handleClick(e, key) {
       var _this3 = this;
 
-      this.setState({ opacity: 0, pointerEvents: 'none' });
-      setTimeout(function () {
-        return _this3.props.history.push('/projects');
-      }, 300);
+      if (!key || key && e.key === 'Enter') {
+        this.setState({ opacity: 0, pointerEvents: 'none' });
+        setTimeout(function () {
+          return _this3.props.history.push('/projects');
+        }, 300);
+      }
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this4 = this;
+
       var skills = ['Node.', 'React.', 'Redux.', 'Express.', 'Firebase.', 'Sequelize.', 'PostgreSQL.', 'Git.', 'Laravel.', 'C-Panel.', 'HTML5.', 'CSS3.'];
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
@@ -19428,7 +19439,7 @@ var Home = function (_Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { className: 'home-img-container' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { style: { width: '90%', height: 'auto' }, src: '/images/picmed.jpg' })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'home-img', src: '/images/pic2.jpg' })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
@@ -19515,7 +19526,13 @@ var Home = function (_Component) {
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'next', onClick: this.handleClick },
+          { className: 'next', onClick: function onClick(e) {
+              return _this4.handleClick(e);
+            }, onKeyPress: function onKeyPress(e) {
+              return _this4.handleClick(e, true);
+            }, onMouseDown: function onMouseDown(e) {
+              return e.preventDefault();
+            }, tabIndex: '0' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h4',
             null,
@@ -19708,17 +19725,21 @@ var Home = function (_Component) {
 
   _createClass(Home, [{
     key: 'handleClick',
-    value: function handleClick() {
+    value: function handleClick(e, key) {
       var _this2 = this;
 
-      this.setState({ opacity: 0, pointerEvents: 'none' });
-      setTimeout(function () {
-        return _this2.props.history.push('/contact');
-      }, 300);
+      if (!key || key && e.key === 'Enter') {
+        this.setState({ opacity: 0, pointerEvents: 'none' });
+        setTimeout(function () {
+          return _this2.props.history.push('/contact');
+        }, 300);
+      }
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var estimator = {
         name: 'Estimator',
         link: 'http://newestimator.yippieyo.in',
@@ -19796,7 +19817,13 @@ var Home = function (_Component) {
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'next', onClick: this.handleClick },
+          { className: 'next', onClick: function onClick(e) {
+              return _this3.handleClick(e);
+            }, onKeyPress: function onKeyPress(e) {
+              return _this3.handleClick(e, true);
+            }, onMouseDown: function onMouseDown(e) {
+              return e.preventDefault();
+            }, tabIndex: '0' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h4',
             null,

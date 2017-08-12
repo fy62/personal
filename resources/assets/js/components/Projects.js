@@ -15,9 +15,11 @@ class Home extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    this.setState({opacity: 0, pointerEvents: 'none'});
-    setTimeout(() => this.props.history.push('/contact'), 300);
+  handleClick(e, key) {
+    if (!key || (key && e.key === 'Enter')) {
+      this.setState({opacity: 0, pointerEvents: 'none'});
+      setTimeout(() => this.props.history.push('/contact'), 300);
+    }
   }
 
   render() {
@@ -104,7 +106,7 @@ class Home extends Component {
             }
           </div>
         </div>
-        <div className='next' onClick={this.handleClick}>
+        <div className='next' onClick={(e) => this.handleClick(e)} onKeyPress={(e) => this.handleClick(e, true)} onMouseDown={(e) => e.preventDefault()} tabIndex='0'>
           <h4>CONTACT</h4>
           <div className='next-arrow'><ChevronRight/></div>
         </div>
