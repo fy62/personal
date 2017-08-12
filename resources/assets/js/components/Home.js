@@ -58,7 +58,7 @@ class Home extends Component {
         <div className='home-content-container-wrapper'>
           <div className='home-content-container'>
             <div className='home-img-container'>
-              <img className='home-img' src={'/images/pic2.jpg'}/>
+              <img className='home-img' src='/images/pic2.jpg'/>
             </div>
             <div className='home-text-container'>
               <h2> Who am I? </h2>
