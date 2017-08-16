@@ -14,6 +14,7 @@ import App from './components/App';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Vid from './components/Vid';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -34,7 +35,6 @@ render((
   <MuiThemeProvider muiTheme={muiTheme}>
     <Router history={history}>
       <div>
-        <Route path="/" component={App}/>
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/projects" component={Projects}/>

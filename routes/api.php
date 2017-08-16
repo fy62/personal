@@ -25,22 +25,50 @@ Route::middleware('api')->post('/sendemail', function (Request $request) {
     $email = $valueArray[1];
     $resume = $valueArray[2];
 
-    if ($resume == 'true') {
-        Mail::send('emailattach', $name,
-            function($message) use ($email){
-                $message->to($email, $name);
-                $message->subject('Hope to hear from you soon!');
-                $message->attach('/images/profile.png');
-            }
-        );
+    $everything = [
+        'name' => $name,
+        'email' => $email
+    ];
+
+    try {
+        if ($resume == 'true') {
+            Mail::send('emailattach', $everything,
+                function($message) use ($email, $name){
+                    $message->to($email, $name)
+                        ->subject('Hope to hear from you soon!')
+                        ->attach('../public/images/thing.pdf', ['as' => 'fyau_resume.pdf']);
+                }
+            );
+        }
+        else {
+            Mail::send('email', $everything,
+                function($message) use ($email, $name){
+                    $message->to($email, $name)
+                        ->subject('Hope to hear from you soon!');
+                }
+            );
+        }
+        return 'sent!';
     }
-    else {
-        Mail::send('email', $name,
-            function($message) use ($email){
-                $message->to($email, $name);
-                $message->subject('Hope to hear from you soon!');
-            }
-        );
+    catch(\Exception $e){
+        return $e->getMessage();
     }
-    return 'sent!';
+});
+
+Route::middleware('api')->post('/checkrecaptcha', function (Request $request) {
+    $bodyContent = $request->getContent();
+    $client = new \GuzzleHttp\Client();
+
+    $response = $client->post(
+        'https://www.google.com/recaptcha/api/siteverify',
+        ['form_params'=>
+            [
+                'secret'=>env('RECAPTCHA_SECRET_KEY'),
+                'response'=>$bodyContent
+            ]
+        ]
+    );
+
+    $body = json_decode((string)$response->getBody());
+    return response()->json($body->success);
 });

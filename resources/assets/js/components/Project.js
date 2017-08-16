@@ -4,7 +4,7 @@ import ContentLink from 'material-ui/svg-icons/content/link';
 import FontIcon from 'material-ui/FontIcon';
 import SvgIcon from 'material-ui/SvgIcon';
 
-class Skill extends Component {
+class Project extends Component {
   constructor(props) {
     super(props);
   }
@@ -61,4 +61,4 @@ class Skill extends Component {
 
 }
 
-export default Skill;
+export default Project;

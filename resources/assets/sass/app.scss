@@ -4,6 +4,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 // @import url(https://fonts.googleapis.com/css?family=Great+Vibes);
 @import url(https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 // Variables
 @import "variables";
@@ -55,13 +56,6 @@ li {
   font-size: 14px;
   line-height: 1.6;
 }
-// a {
-//   text-decoration: none;
-//   color: #3A405A;
-// }
-// a:hover { /* For when your mouse hovers over the element */
-//   text-decoration: underline;
-// }
 
 #app {
   background-color: #FFFCF2;
@@ -84,8 +78,12 @@ li {
   height: 100%;
   margin-left: 3%;
   margin-right: 3%;
-  font-family: 'Roboto', sans-serif;
+  // font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #3A405A;
+
+  // background-image: url('/images/nyc.png');
+  // background-size: cover;
   // text-align: center;
 }
 
@@ -93,12 +91,17 @@ li {
   display: flex;
   flex-direction: row;
   height: 50px;
+
+  position: relative;
+  z-index: 2;
 }
 
 .title {
   flex: 1 1 auto;
   // font-family: 'Great Vibes', cursive;
   font-family: 'Oleo Script Swash Caps', cursive;
+  position: relative;
+  z-index: 2;
 }
 
 .navlinks {
@@ -109,32 +112,100 @@ li {
   // justify-content: space-around;
   justify-content: flex-end;
   margin-right: -2%;
+  position: relative;
+  z-index: 2;
+}
+
+.navlinks-home-only {
+  svg {
+    background-color: white;
+    opacity: .6;
+    border-radius: 25px;
+  }
+}
+
+.home-only {
+  color: white;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .home-container {
-  background-color: #FFFCF2;
+  // background-color: #FFFCF2;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   transition: opacity .2s ease-in;
 }
 
-.home-img-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.home-background {
+  background-image: url('/images/nyc.gif');
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  // z-index: -100;
 }
 
-.home-img {
-  width: 300px;
-  height: 300px;
-}
+// .home-video {
+//   // position: absolute;
+//   // top: 50%;
+//   // left: 50%;
+//   // width: auto;
+//   // height: auto;
+//   // min-width: 100%;
+//   // min-height: 100%;
+//   // -webkit-transform: translate(-50%, -50%);
+//   //     -moz-transform: translate(-50%, -50%);
+//   //     -ms-transform: translate(-50%, -50%);
+//   //   transform: translate(-50%, -50%);
+
+//   // position: fixed;
+//   // top: 50%;
+//   // left: 50%;
+//   // min-width: 100%;
+//   // min-height: 100%;
+//   // width: auto;
+//   // height: auto;
+//   // z-index: -100;
+//   // -ms-transform: translateX(-50%) translateY(-50%);
+//   // -moz-transform: translateX(-50%) translateY(-50%);
+//   // -webkit-transform: translateX(-50%) translateY(-50%);
+//   // transform: translateX(-50%) translateY(-50%);
+//   // background: url('/images/nyc.png') no-repeat;
+//   // background-size: cover;
+
+//   // height: 100%;
+//   // width: 100%;
+//   // top: 0;
+//   // position: absolute;
+// }
+
+
+// .home-img-container {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+// }
+
+// .home-img {
+//   width: 300px;
+//   height: 300px;
+// }
 
 .home-content-container-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   flex: 1 1 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .home-content-container {
@@ -145,6 +216,20 @@ li {
 
 .home-text-container {
   margin-left: 3%;
+  color: white;
+  text-align: center;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+    1px 1px 0 #000;
+
+  h2 {
+    font-size: 45px;
+  }
+  h3 {
+    font-size: 32px;
+  }
 }
 
 .home-skill-container {
@@ -152,6 +237,7 @@ li {
   flex-direction: row;
   align-items: baseline;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .skill-sentence {
@@ -172,10 +258,14 @@ li {
   align-self: flex-end;
   display: flex;
   flex-direction: row;
+
+  position: relative;
+  z-index: 2;
 }
 
 .next-arrow {
-  align-self: flex-end;
+  margin-top: 7px;
+  margin-left: 7px;
 }
 
 .projects-container {
@@ -184,9 +274,9 @@ li {
   flex-direction: column;
   transition: opacity .2s ease-in;
   position: absolute;
-  top: 50px;
+  // top: 50px;
   width: 94%;
-  min-height: calc(100% - 50px);
+  min-height: 100%;
 }
 
 .projects-text-container {
@@ -237,12 +327,28 @@ li {
   transition: opacity .2s ease-in;
 }
 
+.contact-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .contact-description {
   margin: 0;
 }
 
 .contact-list {
   margin: 0 0 11px;
+}
+
+.form-large {
+  align-self: center;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .field-label {
@@ -266,9 +372,13 @@ li {
   //   margin-left: 0%;
   // }
 
-  .home-img {
-    width: 70vh;
-    height: 70vh;
+  // .home-img {
+  //   width: 70vh;
+  //   height: 70vh;
+  // }
+
+  .home-background {
+    background-image: url('/images/nyc_small.png');
   }
 
   .projects-text-container {
@@ -312,6 +422,10 @@ li {
     // text-align: center;
   }
 
+  .home-background {
+    background-image: url('/images/nyc_small.png');
+  }
+
   // .home-text-container {
   //   margin-left: auto;
   // }
@@ -325,10 +439,10 @@ li {
   //   margin-left: 0%;
   // }
 
-  .home-img {
-    width: 70vw;
-    height: 70vw;
-  }
+  // .home-img {
+  //   width: 70vw;
+  //   height: 70vw;
+  // }
 
   .projects-text-container {
     text-align: center;
@@ -344,14 +458,11 @@ li {
     width: 85%;
   }
 
-  .contact-container {
-    align-items: center;
-    margin: 0 5% 0 5%;
-  }
+  // .contact-container {
+  //   margin: 0 5% 0 5%;
+  // }
 
-  .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .contact-text-container {
+    text-align: center;
   }
 }

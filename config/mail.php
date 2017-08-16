@@ -55,10 +55,7 @@ return [
     |
     */
     // TODO: this, and set .env variables
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@feliciay.com'),
-        'name' => env('MAIL_FROM_NAME', 'Felicia Yau'),
-    ],
+    'from' => ['address' => 'no-reply@feliciya.com', 'name' => 'no-reply feliciya.com'],
 
     /*
     |--------------------------------------------------------------------------

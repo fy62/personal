@@ -38,12 +38,14 @@ class App extends Component {
   }
 
   render() {
+    const extra = (this.props.home) ? ' home-only' : '';
+    const navExtra = (this.props.home) ? '-home-only' : '';
     return (
-      <div className='appnav'>
+      <div className={'appnav' + extra}>
         <h2 className='title'>Felicia Yau</h2>
-        <div className='navlinks'>
+        <div className={'navlinks' + navExtra}>
           <IconMenu
-            iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+            iconButtonElement={<IconButton className='appnav-button'><MoreVertIcon /></IconButton>}
             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
             targetOrigin={{horizontal: 'right', vertical: 'bottom'}}
             onRequestChange={this.handleRequestChange}
@@ -86,3 +88,5 @@ export default App;
 //   label='Contact'
 //   disableTouchRipple={true}
 //   onClick={()=> this.handleClick('/contact')}/>
+
+// iconStyle={{color: (this.props.home) ? 'white' : 'rgb(58, 64, 90)'}}

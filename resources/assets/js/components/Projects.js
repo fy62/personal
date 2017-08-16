@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import App from './App';
 import Project from './Project';
 import FlatButton from 'material-ui/FlatButton';
 import ChevronRight from 'material-ui/svg-icons/navigation/chevron-right';
@@ -87,6 +88,7 @@ class Home extends Component {
     ]
     return (
       <div className='projects-container main' style={{opacity: this.state.opacity, pointerEvents: this.state.pointerEvents}}>
+        <App location={this.props.location} history={this.props.history}/>
         <div className='projects-text-container'>
           <h3> My Projects </h3>
           <div className='projects-list-container'>
@@ -108,7 +110,7 @@ class Home extends Component {
         </div>
         <div className='next' onClick={(e) => this.handleClick(e)} onKeyPress={(e) => this.handleClick(e, true)} onMouseDown={(e) => e.preventDefault()} tabIndex='0'>
           <h4>CONTACT</h4>
-          <div className='next-arrow'><ChevronRight/></div>
+          <h3 className='next-arrow'>></h3>
         </div>
       </div>
     )
