@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,7 @@ Route::middleware('api')->post('/sendemail', function (Request $request) {
 
 Route::middleware('api')->post('/checkrecaptcha', function (Request $request) {
     $bodyContent = $request->getContent();
-    $client = new \GuzzleHttp\Client();
+    $client = new Client();
 
     $response = $client->post(
         'https://www.google.com/recaptcha/api/siteverify',
