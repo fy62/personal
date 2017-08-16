@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-use GuzzleHttp\Client;
+use \GuzzleHttp\Client;
 
 /*
 |--------------------------------------------------------------------------
