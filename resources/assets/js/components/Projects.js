@@ -26,7 +26,7 @@ class Home extends Component {
   render() {
     const estimator = {
       name: 'Estimator',
-      link: 'http://newestimator.yippieyo.in',
+      link: 'http://estimator.theideasmaker.com',
       date: 'Jun 2017 - Jul 2017',
       description: 'A project estimator tool used by The Ideas Maker to give their clients an estimated cost for their proposed site or app idea.',
       bullets: 'Redesigned old estimator site from scratch into a single-page app with a greater focus on user experience::'
