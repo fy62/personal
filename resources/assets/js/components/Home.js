@@ -77,7 +77,7 @@ class Home extends Component {
         </div>
         <div className='next home-only' onClick={(e) => this.handleClick(e)} onKeyPress={(e) => this.handleClick(e, true)} onMouseDown={(e) => e.preventDefault()} tabIndex='0'>
           <h4>KNOW MY WORK</h4>
-          <h3 className='next-arrow'>></h3>
+          <h2 className='next-arrow'>&rarr;</h2>
         </div>
       </div>
     )

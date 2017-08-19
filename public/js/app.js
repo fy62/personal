@@ -19565,9 +19565,9 @@ var Home = function (_Component) {
             'KNOW MY WORK'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h3',
+            'h2',
             { className: 'next-arrow' },
-            '>'
+            '\u2192'
           )
         )
       );
@@ -19873,9 +19873,9 @@ var Home = function (_Component) {
             'CONTACT'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h3',
+            'h2',
             { className: 'next-arrow' },
-            '>'
+            '\u2192'
           )
         )
       );
